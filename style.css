@@ -1,0 +1,126 @@
+*{box-sizing:border-box;}
+body{
+	margin:0;
+	font-family: 'Josefin Sans', sans-serif;
+	display:grid;
+	grid-template:
+	'head' minmax(50px,auto)
+	'hero'minmax(100px,auto)
+	'content'minmax(100px,auto);
+	font-size:16px;
+}
+header{
+	padding:30px;
+	padding-top:50px;
+	grid-area:head;
+}
+.hero-mobile{
+	width:100vw;
+	grid-area:hero;
+}
+.content{
+	text-align:center;
+	grid-area:content;
+	width:100vw;
+	background:hsl(0deg 100% 98%);
+	padding:65px 15px;
+}
+.content h2{
+	font-size:clamp(45px,4vw,4rem);
+	text-transform:uppercase;
+	letter-spacing:10px;
+	width:9ch;
+	margin-inline:auto;
+	margin-top:15px;
+	color:hsl(0, 6%, 24%);
+}
+.content h2 span{
+	color:hsl(0, 36%, 70%);
+	font-weight:300;
+}
+.content p{
+	margin-top:0;
+	line-height:1.6;
+	margin-inline:auto;
+	color:hsl(0, 36%, 70%);
+	margin-right:40px;
+}
+.email-adress{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.email-adress input{
+	padding:15px;
+	margin-right:-3px;
+	border:none;
+	color:hsl(0, 36%, 70%);
+	background-color:#fff;
+	width:min(60vw,300px);
+	background:transparent;
+}
+.email-adress input:focus{
+	outline:none;
+}
+.email-adress form{
+	border:1px solid hsl(0, 36%, 70%);
+	border-radius:40px;
+	overflow:hidden;
+	display:flex;
+}
+.email-adress button{
+	margin:0;
+	padding:15px;
+	border:none;
+	border-radius:40px;
+	padding-inline:30px;
+	cursor:pointer;
+	background:linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+}
+.hero-desktop{
+	display:none;
+}
+@media (min-width:771px){
+	body{
+		grid-template:
+		'head hero'100px
+		'content hero';
+		position:relative;
+	}
+	body:after{
+		background:url(images/bg-pattern-desktop.svg) no-repeat center left;
+		background-size:cover;
+		content:'';
+		width:60vw;
+		height:100vh;
+		position:absolute;
+		z-index:-1;
+	}
+	.content{
+		background:none;
+		text-align:left;
+		padding:40px 20px 0 100px;
+		width:60vw;
+	}
+	.hero-mobile{
+		display:none;
+	}
+	.hero-desktop{
+		display:block;
+		grid-area:hero;
+		height:100vh;
+		width:40vw;
+	}
+	.content h2{
+		margin-left:0;
+		line-height:1.2;
+	}
+	header{
+		padding-left:100px;
+		width:60vw;
+	}
+	.email-adress{
+		justify-content:flex-start;
+		margin-top:50px;
+	}
+}
