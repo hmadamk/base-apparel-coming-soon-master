@@ -71,6 +71,7 @@ main .text input {
 
 main .text .label {
   position: relative;
+  display: inline;
 }
 
 main .text button {
