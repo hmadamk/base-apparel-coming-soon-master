@@ -69,7 +69,7 @@ main .text input {
   background-color: transparent;
 }
 
-main .text label {
+main .text .label {
   position: relative;
 }
 
